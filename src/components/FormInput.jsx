@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 export const FormInput = ({
     label,
@@ -80,33 +80,82 @@ export const InputDropdown = ({
   value,
   onChange,
   required = true,
-
+  error,
 }) => {
-return (
-  <div className='flex flex-col items-start self-stretch h-[76px]'>
-    <label htmlFor={name} className='flex w-auto pr-[16px] pl-0 pb-1 items-end gap-1 text-[var(--text-dark-secondary,rgba(51,_51,_51,_0.68))] font-[DM_Sans] text-[0.875rem] sm:text-base font-normal leading-[1.4] tracking-[0.2px]'>
-      {label}
-      {required && <p className='text-[#D32E1F] font-[Poppins] text-[0.875rem] sm:text-base font-normal leading-6 tracking-[0.15px]'>*</p>}
-    </label>
+  const [isOpen, setIsOpen] = useState(false);
+  const options = ['Pria', 'Wanita'];
 
-    <div className='h-12 p-[12px_10px] flex items-center self-stretch rounded-md border border-[#F1F1F1] gap-[8px] transition-all duration-300 ease-in-out"'>
-      <input
-      id={name}
-      name={name}
-      type={type}
-      value={value}
-      onChange={onChange}
-      required={required}
-      className='w-full font-[DM_Sans] text-[0.875rem] sm:text-base font-normal leading-[140%] tracking-[0.2px] text-[#4A505C] outline-none border-none'
-      ></input>
+  const handleSelect = (option) => {
+    onChange({
+      target: {
+        name,
+        value: option
+      }
+    });
+    setIsOpen(false);
+  };
 
-      <button type='button' className='w-[24px] h-[24px] border-none outline-none bg-[#FFF] cursor-pointer'>
-          <img src='/images/keyboard_arrow_down.svg' className='max-w-none' />
-      </button>
+  return (
+    <div className='flex flex-col items-start self-stretch h-[76px]'>
+      <label htmlFor={name} className='flex w-auto pr-[16px] pl-0 pb-1 items-end gap-1 text-[var(--text-dark-secondary,rgba(51,_51,_51,_0.68))] font-[DM_Sans] text-[0.875rem] sm:text-base font-normal leading-[1.4] tracking-[0.2px]'>
+        {label}
+        {required && <p className='text-[#D32E1F] font-[Poppins] text-[0.875rem] sm:text-base font-normal leading-6 tracking-[0.15px]'>*</p>}
+      </label>
+
+      <div className='relative w-full'>
+        <div 
+          className='h-12 p-[12px_10px] flex items-center self-stretch rounded-md border border-[#F1F1F1] gap-[8px] transition-all duration-300 ease-in-out'
+          onClick={() => setIsOpen(!isOpen)}
+        >
+          <input
+            id={name}
+            name={name}
+            type={type}
+            value={value}
+            readOnly
+            required={required}
+            className='w-full font-[DM_Sans] text-[0.875rem] sm:text-base font-normal leading-[140%] tracking-[0.2px] text-[#4A505C] outline-none border-none cursor-pointer'
+          />
+
+          <button 
+            type='button' 
+            className='w-[24px] h-[24px] border-none outline-none bg-[#FFF] cursor-pointer'
+            onClick={(e) => {
+              e.stopPropagation();
+              setIsOpen(!isOpen);
+            }}
+          >
+            <img 
+              src='/images/keyboard_arrow_down.svg' 
+              className={`max-w-none transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`} 
+              alt="dropdown"
+            />
+          </button>
+        </div>
+
+        {isOpen && (
+          <div className='absolute w-full mt-1 bg-white rounded-md shadow-lg border border-[#F1F1F1] z-10 text-[var(--text-dark-secondary,rgba(51,_51,_51,_0.68))] font-[DM_Sans] text-[0.875rem] sm:text-base font-normal leading-[1.4] tracking-[0.2px]'>
+            {options.map((option) => (
+              <div
+                key={option}
+                className={`px-4 py-2 cursor-pointer hover:bg-gray-100 ${value === option ? 'bg-gray-100' : ''}`}
+                onClick={() => handleSelect(option)}
+              >
+                {option}
+              </div>
+            ))}
+          </div>
+        )}
+      </div>
+
+      {error && (
+        <p className='text-sm text-red-500 mt-1'>
+          {error}
+        </p>
+      )}
     </div>
-  </div>
-)
-}
+  );
+};
 
 export const InputNoHP = ({
   label = 'No HP',
@@ -116,8 +165,20 @@ export const InputNoHP = ({
   iconImg = '/images/keyboard_arrow_down.svg',
   kodeNegara = '+62',
   required = true,
-
+  value,
+  onChange,
 }) => {
+  const handleInputChange = (e) => {
+    // Hanya mengizinkan input angka
+    const inputValue = e.target.value.replace(/[^0-9]/g, '');
+    onChange({
+      target: {
+        name,
+        value: inputValue
+      }
+    });
+  };
+
   return(
     <div className='flex justify-start items-end gap-[24px] self-stretch'>
       <div className='flex flex-col items-start'>
@@ -139,7 +200,13 @@ export const InputNoHP = ({
           </div>
         </div>
       </div>
-      <input type={type} className='font-[DM_Sans] w-full text-[0.875rem] sm:text-base font-normal leading-[140%] tracking-[0.02px] h-[63.2%] flex rounded-md border border-[var(--Other-Border,rgba(58,_53,_65,_0.12))] pt-[12px] pr-[10px] pb-[12px] pl-[10px] flex-[1_0_0] transition-[border-color,box-shadow] duration-300 ease-in-out outline-none'></input>
+      <input 
+        type={type} 
+        name={name}
+        value={value}
+        onChange={handleInputChange}
+        className='font-[DM_Sans] w-full text-[0.875rem] sm:text-base font-normal leading-[140%] tracking-[0.02px] h-[63.2%] flex rounded-md border border-[var(--Other-Border,rgba(58,_53,_65,_0.12))] pt-[12px] pr-[10px] pb-[12px] pl-[10px] flex-[1_0_0] transition-[border-color,box-shadow] duration-300 ease-in-out outline-none'
+      />
     </div>
   )
 }

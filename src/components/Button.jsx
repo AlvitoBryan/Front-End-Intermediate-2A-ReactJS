@@ -1,6 +1,7 @@
 import React from 'react'
 
 export const Button = ({
+    type = "submit",
     text = "Masuk",
     bgClass = "bg-[var(--Primary-100,_rgba(226,252,217,0.8))]",
     textColor = "text-[var(--Primary-Default,#3ECF4C)]",
@@ -11,7 +12,7 @@ export const Button = ({
 }) => {
   
   return (
-    <button className={`flex ${widthButton} h-[42px] flex-col justify-center items-center rounded-[10px] ${bgClass} border-none outline-none ${textColor} self-stretch font-[DM_Sans] ${textSize} font-bold leading-[140%] tracking-[0.2px] transition-colors duration-300 ease-linear ${hoverBtn}` } onClick={onclick}>
+    <button type={type} className={`flex ${widthButton} h-[42px] flex-col justify-center items-center rounded-[10px] ${bgClass} border-none outline-none ${textColor} self-stretch font-[DM_Sans] ${textSize} font-bold leading-[140%] tracking-[0.2px] transition-colors duration-300 ease-linear ${hoverBtn}` } onClick={onclick}>
         {text}
     </button>
   )
