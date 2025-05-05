@@ -27,11 +27,22 @@ const AuthFormContentWrapper = ({ inputs, buttons, onSubmitForm, mode = "registe
     // Ambil array user dari localStorage, jika belum ada, buat array kosong
     const users = JSON.parse(localStorage.getItem("users")) || [];
 
+    // Cek apakah email sudah digunakan
+    const emailUsed = users.some((u) => u.email === dataBaru.email);
+    if (emailUsed) {
+      setPopupMsg("Email sudah digunakan!");
+      setShowPopup(true);
+      return;
+    }
+
     // Tambahkan data baru ke array
     users.push(dataBaru);
 
     // Simpan kembali ke localStorage
     localStorage.setItem("users", JSON.stringify(users));
+
+    // Simpan session user ke sessionStorage
+    sessionStorage.setItem("currentUser", JSON.stringify(dataBaru));
 
     window.location.href = "/";
   };
@@ -45,6 +56,8 @@ const AuthFormContentWrapper = ({ inputs, buttons, onSubmitForm, mode = "registe
       (u) => u.email === email && u.katasandi === password
     );
     if (user) {
+      // Simpan session user ke sessionStorage
+      sessionStorage.setItem("currentUser", JSON.stringify(user));
       window.location.href = "/";
     } else {
       setPopupMsg("Email atau password salah!");

@@ -1,4 +1,5 @@
 import React from 'react'
+import { useNavigate } from "react-router-dom";
 
 export const Button = ({
     type,
@@ -61,6 +62,32 @@ return (
       {text}
   </button>
 )
+}
+
+export const ButtonLogin = () => {
+  const navigate = useNavigate();
+
+  const handleLoginClick = () => {
+    navigate("/login");
+  };
+  return (
+    <button className='flex flex-col justify-center items-center rounded-[10px] bg-[rgba(226,252,217,0.80)] p-[10px_26px] gap-[8px] text-[#3ECF4C] font-[DM_Sans] text-base font-bold leading-[140%] tracking-[0.2px] transition-colors duration-300 ease-linear hover:bg-[var(--Primary-Default,#3ECF4C)] hover:text-[var(--text-light-primary,#FFF)]' onClick={handleLoginClick}>
+      Login
+    </button>
+  )
+}
+
+export const ButtonRegister = () => {
+  const navigate = useNavigate();
+
+  const handleRegisterClick = () => {
+    navigate("/register");
+  };
+  return (
+    <button className='flex flex-col justify-center items-center rounded-[10px] bg-[#FFF] border-[2.5px] border-[#3ECF4C] p-[10px_26px] gap-[8px] text-[#3ECF4C] font-[DM_Sans] text-base font-bold leading-[140%] tracking-[0.2px] transition-colors duration-300 ease-linear hover:bg-[var(--Primary-Default,#3ECF4C)] hover:text-[var(--text-light-primary,#FFF)]' onClick={handleRegisterClick}>
+      Register
+    </button>
+  )
 }
 
 
