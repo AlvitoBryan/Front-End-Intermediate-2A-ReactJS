@@ -32,6 +32,7 @@ const Login = () => {
                         <Button type="button" text="Daftar" onClick={() => navigate('/register')}/>,
                         <GoogleLogin/>  
                     ]}
+                    mode="login"
                 />
 
             </AuthForm>
