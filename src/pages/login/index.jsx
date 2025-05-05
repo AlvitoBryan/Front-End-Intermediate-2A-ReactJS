@@ -28,8 +28,8 @@ const Login = () => {
 
                     ]}
                     buttons={[
-                        <Button onclick={() => navigate('/')} />,
-                        <Button text="Daftar" onclick={() => navigate('/register')}/>,
+                        <Button type="submit" />,
+                        <Button type="button" text="Daftar" onClick={() => navigate('/register')}/>,
                         <GoogleLogin/>  
                     ]}
                 />

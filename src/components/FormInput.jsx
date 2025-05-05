@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 
 export const FormInput = ({
+    id,
     label,
     name,
     type = 'text',
@@ -12,13 +13,13 @@ export const FormInput = ({
   return (
     <div className='flex flex-col items-start self-stretch h-[76px] w-full max-w-[518px]'>
         {label && (
-            <label htmlFor={name} className='flex items-end gap-1 w-auto pr-[16px] pl-0 pb-1 text-[var(--text-dark-secondary,rgba(51,_51,_51,_0.68))] text-[0.875rem] sm:text-base font-normal leading-[1.4] tracking-[0.2px] font-[DM_Sans] '>
+            <label htmlFor={id} className='flex items-end gap-1 w-auto pr-[16px] pl-0 pb-1 text-[var(--text-dark-secondary,rgba(51,_51,_51,_0.68))] text-[0.875rem] sm:text-base font-normal leading-[1.4] tracking-[0.2px] font-[DM_Sans] '>
                 {label}
                 {required && <p className='text-[#D32E1F] font-[Poppins] text-[0.875rem] sm:text-base font-normal leading-6 tracking-[0.15px]'>*</p>} 
             </label>
         )}
         <input
-        id={name}
+        id={id}
         name={name}
         type={type}
         value={value}
@@ -39,34 +40,44 @@ export const FormInput = ({
 
 
 export const InputPassword = ({
+    id,
     label,
     name,
-    type = 'password',
     value,
     onChange,
     required = true,
 
 }) => {
+  const [showPassword, setShowPassword] = useState(false);
   return (
     <div className='flex flex-col items-start self-stretch h-[76px]'>
-      <label htmlFor={name} className='flex w-auto pr-[16px] pl-0 pb-1 items-end gap-1 text-[var(--text-dark-secondary,rgba(51,_51,_51,_0.68))] font-[DM_Sans] text-[0.875rem] sm:text-base font-normal leading-[1.4] tracking-[0.2px]'>
+      <label htmlFor={id} className='flex w-auto pr-[16px] pl-0 pb-1 items-end gap-1 text-[var(--text-dark-secondary,rgba(51,_51,_51,_0.68))] font-[DM_Sans] text-[0.875rem] sm:text-base font-normal leading-[1.4] tracking-[0.2px]'>
         {label}
         {required && <p className='text-[#D32E1F] font-[Poppins] text-base font-normal leading-6 tracking-[0.15px]'>*</p>}
       </label>
 
       <div className='h-12 p-[12px_10px] flex items-center self-stretch rounded-md border border-[#F1F1F1] gap-[8px] transition-all duration-300 ease-in-out"'>
         <input
-        id={name}
+        id={id}
         name={name}
-        type={type}
+        type={showPassword ? 'text' : 'password'}
         value={value}
         onChange={onChange}
         required={required}
         className='w-full font-[DM_Sans] text-[0.875rem] sm:text-base font-normal leading-[140%] tracking-[0.2px] text-[#4A505C] outline-none border-none'
         ></input>
 
-        <button type='button' className='w-[24px] h-[24px] border-none outline-none bg-[#FFF] cursor-pointer'>
-            <img src='/images/toggle-password.svg' className='max-w-none' />
+        <button
+          type='button'
+          className='w-[24px] h-[24px] border-none outline-none bg-[#FFF] cursor-pointer'
+          onClick={() => setShowPassword((prev) => !prev)}
+          tabIndex={-1}
+        >
+          <img
+            src={showPassword ? '/images/eye-open.png' : '/images/toggle-password.svg'}
+            className='max-w-none'
+            alt={showPassword ? 'Sembunyikan password' : 'Tampilkan password'}
+          />
         </button>
       </div>
     </div>
@@ -74,6 +85,7 @@ export const InputPassword = ({
 }
 
 export const InputDropdown = ({
+  id,
   label,
   name,
   type = 'text',
@@ -97,7 +109,7 @@ export const InputDropdown = ({
 
   return (
     <div className='flex flex-col items-start self-stretch h-[76px]'>
-      <label htmlFor={name} className='flex w-auto pr-[16px] pl-0 pb-1 items-end gap-1 text-[var(--text-dark-secondary,rgba(51,_51,_51,_0.68))] font-[DM_Sans] text-[0.875rem] sm:text-base font-normal leading-[1.4] tracking-[0.2px]'>
+      <label htmlFor={id} className='flex w-auto pr-[16px] pl-0 pb-1 items-end gap-1 text-[var(--text-dark-secondary,rgba(51,_51,_51,_0.68))] font-[DM_Sans] text-[0.875rem] sm:text-base font-normal leading-[1.4] tracking-[0.2px]'>
         {label}
         {required && <p className='text-[#D32E1F] font-[Poppins] text-[0.875rem] sm:text-base font-normal leading-6 tracking-[0.15px]'>*</p>}
       </label>
@@ -108,7 +120,7 @@ export const InputDropdown = ({
           onClick={() => setIsOpen(!isOpen)}
         >
           <input
-            id={name}
+            id={id}
             name={name}
             type={type}
             value={value}
@@ -158,6 +170,7 @@ export const InputDropdown = ({
 };
 
 export const InputNoHP = ({
+  id = 'no-HP',
   label = 'No HP',
   name = 'noHp',
   type = 'text',
@@ -182,7 +195,7 @@ export const InputNoHP = ({
   return(
     <div className='flex justify-start items-end gap-[24px] self-stretch'>
       <div className='flex flex-col items-start'>
-        <label htmlFor={name} className='flex w-auto pt-0 pr-4 pb-1 pl-0 items-end gap-1 text-[var(--text-dark-secondary,rgba(51,_51,_51,_0.68))] font-[DM_Sans] text-[0.875rem] sm:text-base font-normal leading-[140%] tracking-[0.02px]'>
+        <label htmlFor={id} className='flex w-auto pt-0 pr-4 pb-1 pl-0 items-end gap-1 text-[var(--text-dark-secondary,rgba(51,_51,_51,_0.68))] font-[DM_Sans] text-[0.875rem] sm:text-base font-normal leading-[140%] tracking-[0.02px]'>
           {label}
           {required && <p className='text-[#D32E1F] font-[Poppins] text-[0.875rem] sm:text-base font-normal leading-6 tracking-[0.15px]'>*</p>}    
         </label>
@@ -200,7 +213,8 @@ export const InputNoHP = ({
           </div>
         </div>
       </div>
-      <input 
+      <input
+        id={id}
         type={type} 
         name={name}
         value={value}

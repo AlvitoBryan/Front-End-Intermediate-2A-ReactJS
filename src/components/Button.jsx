@@ -1,18 +1,18 @@
 import React from 'react'
 
 export const Button = ({
-    type = "submit",
+    type,
     text = "Masuk",
     bgClass = "bg-[var(--Primary-100,_rgba(226,252,217,0.8))]",
     textColor = "text-[var(--Primary-Default,#3ECF4C)]",
     widthButton = "w-full",
     textSize = "text-[0.875rem] sm:text-base",
     hoverBtn = "hover:bg-[var(--Primary-Default,#3ECF4C)] hover:text-[var(--text-light-primary,#FFF)]",
-    onclick,
+    onClick = () => {},
 }) => {
   
   return (
-    <button type={type} className={`flex ${widthButton} h-[42px] flex-col justify-center items-center rounded-[10px] ${bgClass} border-none outline-none ${textColor} self-stretch font-[DM_Sans] ${textSize} font-bold leading-[140%] tracking-[0.2px] transition-colors duration-300 ease-linear ${hoverBtn}` } onClick={onclick}>
+    <button type={type} className={`flex ${widthButton} h-[42px] flex-col justify-center items-center rounded-[10px] ${bgClass} border-none outline-none ${textColor} self-stretch font-[DM_Sans] ${textSize} font-bold leading-[140%] tracking-[0.2px] transition-colors duration-300 ease-linear ${hoverBtn}` } onClick={() => {onClick()}}>
         {text}
     </button>
   )
@@ -38,10 +38,10 @@ export const ButtonHero = ({
     widthButton = "w-fit",
     textSize = "text-[0.875rem] sm:text-base",
     hoverBtn = "hover:bg-[var(--Primary-Default,#3ECF4C)] hover:text-[var(--text-light-primary,#FFF)]",
-    onclick,
+    onClick,
 }) => {
   return (
-    <button className={`flex ${widthButton} flex-col justify-center items-center rounded-[10px] p-[10px_26px] ${bgClass} border-none outline-none ${textColor} font-[DM_Sans] ${textSize} font-medium leading-[140%] tracking-[0.2px] transition-colors duration-300 ease-linear ${hoverBtn} cursor-pointer`} style={{paddingTop: 'min(10px, 7.78%)', paddingBottom: 'min(10px, 7.78%)', paddingLeft: 'min(26px, 2.68%)', paddingRight: 'min(26px, 2.68%)',}} onClick={onclick}>
+    <button className={`flex ${widthButton} flex-col justify-center items-center rounded-[10px] p-[10px_26px] ${bgClass} border-none outline-none ${textColor} font-[DM_Sans] ${textSize} font-medium leading-[140%] tracking-[0.2px] transition-colors duration-300 ease-linear ${hoverBtn} cursor-pointer`} style={{paddingTop: 'min(10px, 7.78%)', paddingBottom: 'min(10px, 7.78%)', paddingLeft: 'min(26px, 2.68%)', paddingRight: 'min(26px, 2.68%)',}} onClick={onClick}>
         {text}
     </button>
   )
@@ -54,10 +54,10 @@ export const ButtonTab = ({
   widthButton = "w-fit",
   textSize = "text-[0.875rem] sm:text-base",
   // hoverBtn = "hover:bg-[var(--Primary-Default,#3ECF4C)] hover:text-[var(--text-light-primary,#FFF)]",
-  onclick,
+  onClick,
 }) => {
 return (
-  <button className={`flex ${widthButton} items-center p-[12px_36px_12px_0px] gap-[6px] ${bgClass} border-none outline-none ${textColor} font-[DM_Sans] ${textSize} font-medium leading-[140%] tracking-[0.2px] transition-colors duration-300 ease-linear cursor-pointer whitespace-nowrap tabs-btn`} onClick={onclick}>
+  <button className={`flex ${widthButton} items-center p-[12px_36px_12px_0px] gap-[6px] ${bgClass} border-none outline-none ${textColor} font-[DM_Sans] ${textSize} font-medium leading-[140%] tracking-[0.2px] transition-colors duration-300 ease-linear cursor-pointer whitespace-nowrap tabs-btn`} onClick={onClick}>
       {text}
   </button>
 )

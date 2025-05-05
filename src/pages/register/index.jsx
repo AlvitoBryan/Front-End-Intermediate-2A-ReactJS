@@ -97,8 +97,8 @@ const Register = () => {
             />,
           ]}
           buttons={[
-            <Button text="Daftar" onclick={() => navigate("/")} />,
-            <Button onclick={() => navigate("/login")} />,
+            <Button type="submit" text="Daftar"/>,
+            <Button type="button" onClick={() => navigate("/login")}/>,
             <GoogleLogin />,
           ]}
         />
