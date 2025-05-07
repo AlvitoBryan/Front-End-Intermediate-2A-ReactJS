@@ -5,6 +5,11 @@
 
 @import "tailwindcss";
 
+@theme {
+    --breakpoint-1424vp: 89rem;
+    --breakpoint-880vp: 55rem;
+    --breakpoint-365vp: 22.813rem;
+}
 
 * {
     box-sizing: border-box;
@@ -20,6 +25,7 @@ html, body, #root {
     margin: 0;
     padding: 0;
 }
+
 
 .scrollbar-hide::-webkit-scrollbar {
     display: none;

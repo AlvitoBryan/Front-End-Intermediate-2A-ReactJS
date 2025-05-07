@@ -6,9 +6,9 @@ const Profile = () => {
     return(
         <>
             <Navigation/>
-            <div className="flex w-full p-[28px_20px] md:p-[110px_120px] items-start justify-center gap-[36px]">
+            <div className="flex w-full flex-col 880vp:flex-row p-[28px_20px] md:p-[28px_55px] lg:p-[110px_120px] items-start justify-center gap-[36px]">
                 <ProfileNavigation/>
-                <ProfileMain/>  
+                <ProfileMain/>
             </div>
             <Footer/>
         </>
