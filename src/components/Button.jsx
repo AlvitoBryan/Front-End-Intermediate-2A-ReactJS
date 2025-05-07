@@ -90,5 +90,21 @@ export const ButtonRegister = () => {
   )
 }
 
+export const ButtonSimpanProfile = () => {
+  return (
+    <button className='flex h-[46px] flex-col justify-center items-center rounded-[10px] bg-[var(--Primary-100,_rgba(226,252,217,0.8))] p-[10px_26px] gap-[8px] text-[#3ECF4C] font-[DM_Sans] text-base font-bold leading-[140%] tracking-[0.2px] transition-colors duration-300 ease-linear hover:bg-[var(--Primary-Default,#3ECF4C)] hover:text-[var(--text-light-primary,#FFF)]'>
+      Simpan
+    </button>
+  )
+}
+
+export const ButtonHapusProfile = () => {
+  return (
+    <button className='flex h-[46px] flex-col justify-center items-center rounded-[10px] bg-[#FCE3D1] p-[10px_26px] gap-[8px] text-[#FF5C2B] font-[DM_Sans] text-base font-bold leading-[140%] tracking-[0.2px] transition-colors duration-300 ease-linear hover:bg-[#DB3D1F] hover:text-[var(--text-light-primary,#FFF)]'>
+      Hapus Akun
+    </button>
+  )
+}
+
 
 export default Button
