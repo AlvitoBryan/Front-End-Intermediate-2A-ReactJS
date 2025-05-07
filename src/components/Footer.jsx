@@ -20,30 +20,30 @@ const Footer = () => {
                 <div className='flex flex-col items-start gap-[15px]'>
                     <h4 className='text-[var(--text-dark-primary,#222325)] font-[DM_Sans] text-base font-bold leading-[140%] tracking-[0.2px]'>Kategori</h4>
                     <nav className='flex flex-col items-start gap-[13px]'>
-                        <a className='text-[var(--text-dark-secondary,rgba(51,51,51,0.68))] font-[DM_Sans] text-base font-medium leading-[140%] tracking-[0.2px] decoration-0 hover:underline'>Digital & Teknologi</a>
-                        <a className='text-[var(--text-dark-secondary,rgba(51,51,51,0.68))] font-[DM_Sans] text-base font-medium leading-[140%] tracking-[0.2px] decoration-0 hover:underline'>Pemasaran</a>
-                        <a className='text-[var(--text-dark-secondary,rgba(51,51,51,0.68))] font-[DM_Sans] text-base font-medium leading-[140%] tracking-[0.2px] decoration-0 hover:underline'>Manajemen Bisnis</a>
-                        <a className='text-[var(--text-dark-secondary,rgba(51,51,51,0.68))] font-[DM_Sans] text-base font-medium leading-[140%] tracking-[0.2px] decoration-0 hover:underline'>Pengembangan Diri</a>
-                        <a className='text-[var(--text-dark-secondary,rgba(51,51,51,0.68))] font-[DM_Sans] text-base font-medium leading-[140%] tracking-[0.2px] decoration-0 hover:underline'>Desain</a>
+                        <a className='text-[var(--text-dark-secondary,rgba(51,51,51,0.68))] font-[DM_Sans] text-base font-medium leading-[140%] tracking-[0.2px] decoration-0 hover:underline cursor-pointer'>Digital & Teknologi</a>
+                        <a className='text-[var(--text-dark-secondary,rgba(51,51,51,0.68))] font-[DM_Sans] text-base font-medium leading-[140%] tracking-[0.2px] decoration-0 hover:underline cursor-pointer'>Pemasaran</a>
+                        <a className='text-[var(--text-dark-secondary,rgba(51,51,51,0.68))] font-[DM_Sans] text-base font-medium leading-[140%] tracking-[0.2px] decoration-0 hover:underline cursor-pointer'>Manajemen Bisnis</a>
+                        <a className='text-[var(--text-dark-secondary,rgba(51,51,51,0.68))] font-[DM_Sans] text-base font-medium leading-[140%] tracking-[0.2px] decoration-0 hover:underline cursor-pointer'>Pengembangan Diri</a>
+                        <a className='text-[var(--text-dark-secondary,rgba(51,51,51,0.68))] font-[DM_Sans] text-base font-medium leading-[140%] tracking-[0.2px] decoration-0 hover:underline cursor-pointer'>Desain</a>
                     </nav>
                 </div>
 
                 <div className='flex flex-col items-start gap-[15px]'>
                     <h4 className='text-[var(--text-dark-primary,#222325)] font-[DM_Sans] text-base font-bold leading-[140%] tracking-[0.2px]'>Perusahaan</h4>
                     <nav className='flex flex-col items-start gap-[13px]'>
-                        <a className='text-[var(--text-dark-secondary,rgba(51,51,51,0.68))] font-[DM_Sans] text-base font-medium leading-[140%] tracking-[0.2px] decoration-0 hover:underline'>Tentang Kami</a>
-                        <a className='text-[var(--text-dark-secondary,rgba(51,51,51,0.68))] font-[DM_Sans] text-base font-medium leading-[140%] tracking-[0.2px] decoration-0 hover:underline'>FAQ</a>
-                        <a className='text-[var(--text-dark-secondary,rgba(51,51,51,0.68))] font-[DM_Sans] text-base font-medium leading-[140%] tracking-[0.2px] decoration-0 hover:underline'>Kebijakan Privasi</a>
-                        <a className='text-[var(--text-dark-secondary,rgba(51,51,51,0.68))] font-[DM_Sans] text-base font-medium leading-[140%] tracking-[0.2px] decoration-0 hover:underline'>Ketentuan Layanan</a>
-                        <a className='text-[var(--text-dark-secondary,rgba(51,51,51,0.68))] font-[DM_Sans] text-base font-medium leading-[140%] tracking-[0.2px] decoration-0 hover:underline'>Bantuan</a>
+                        <a className='text-[var(--text-dark-secondary,rgba(51,51,51,0.68))] font-[DM_Sans] text-base font-medium leading-[140%] tracking-[0.2px] decoration-0 hover:underline cursor-pointer'>Tentang Kami</a>
+                        <a className='text-[var(--text-dark-secondary,rgba(51,51,51,0.68))] font-[DM_Sans] text-base font-medium leading-[140%] tracking-[0.2px] decoration-0 hover:underline cursor-pointer'>FAQ</a>
+                        <a className='text-[var(--text-dark-secondary,rgba(51,51,51,0.68))] font-[DM_Sans] text-base font-medium leading-[140%] tracking-[0.2px] decoration-0 hover:underline cursor-pointer'>Kebijakan Privasi</a>
+                        <a className='text-[var(--text-dark-secondary,rgba(51,51,51,0.68))] font-[DM_Sans] text-base font-medium leading-[140%] tracking-[0.2px] decoration-0 hover:underline cursor-pointer'>Ketentuan Layanan</a>
+                        <a className='text-[var(--text-dark-secondary,rgba(51,51,51,0.68))] font-[DM_Sans] text-base font-medium leading-[140%] tracking-[0.2px] decoration-0 hover:underline cursor-pointer'>Bantuan</a>
                     </nav>
                 </div>
 
                 <div className='flex flex-col items-start gap-[15px]'>
                     <h4 className='text-[var(--text-dark-primary,#222325)] font-[DM_Sans] text-base font-bold leading-[140%] tracking-[0.2px]'>Komunitas</h4>
                     <nav className='flex flex-col items-start gap-[13px]'>
-                        <a className='text-[var(--text-dark-secondary,rgba(51,51,51,0.68))] font-[DM_Sans] text-base font-medium leading-[140%] tracking-[0.2px] decoration-0 hover:underline'>Tips Sukses</a>
-                        <a className='text-[var(--text-dark-secondary,rgba(51,51,51,0.68))] font-[DM_Sans] text-base font-medium leading-[140%] tracking-[0.2px] decoration-0 hover:underline'>Blog</a>
+                        <a className='text-[var(--text-dark-secondary,rgba(51,51,51,0.68))] font-[DM_Sans] text-base font-medium leading-[140%] tracking-[0.2px] decoration-0 hover:underline cursor-pointer'>Tips Sukses</a>
+                        <a className='text-[var(--text-dark-secondary,rgba(51,51,51,0.68))] font-[DM_Sans] text-base font-medium leading-[140%] tracking-[0.2px] decoration-0 hover:underline cursor-pointer'>Blog</a>
                     </nav>
                 </div>
             </div>
@@ -57,10 +57,10 @@ const Footer = () => {
             <h3 className='text-[var(--text-dark-secondary,rgba(51,51,51,0.68))] font-[DM_Sans] text-base font-medium leading-[140%] tracking-[0.2px]'>@2023 Gerobak Sayur All Rights Reserved.</h3> 
 
             <div className='flex items-start gap-[15px]'>
-                <img className='w-[35px] h-[35px]' src='images/social_linkin.svg'/>
-                <img className='w-[35px] h-[35px]' src='images/social_facebook.svg'/>
-                <img className='w-[35px] h-[35px]' src='images/social_instagram.svg'/>
-                <img className='w-[35px] h-[35px]' src='images/social_x.svg'/>
+                <img className='w-[35px] h-[35px] cursor-pointer' src='images/social_linkin.svg'/>
+                <img className='w-[35px] h-[35px] cursor-pointer' src='images/social_facebook.svg'/>
+                <img className='w-[35px] h-[35px] cursor-pointer' src='images/social_instagram.svg'/>
+                <img className='w-[35px] h-[35px] cursor-pointer' src='images/social_x.svg'/>
             </div>
         </div>
 
