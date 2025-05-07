@@ -17,7 +17,7 @@ const Navigation = () => {
     }, []);
 
     return(
-        <div className='flex justify-between items-center w-auto p-[16px_0px_16px_24px] sm:p-[12px_40px] md:p-[12px_80px] lg:p-[12px_120px] border-b border-[rgba(58,53,65,0.12)] gap-[36px] bg-[#FFF]'>
+        <div className='flex justify-between items-center w-auto p-[16px_0px_16px_24px] sm:p-[12px_40px] md:p-[12px_80px] lg:p-[12px_120px] border-b border-[rgba(58,53,65,0.12)] gap-[16px] sm:gap-[36px] bg-[#FFF]'>
             <div className='flex justify-between items-center w-full'>
                 <LogoPlaceholder/>
 
