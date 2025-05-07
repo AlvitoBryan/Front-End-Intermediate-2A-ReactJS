@@ -2,7 +2,11 @@ import Navigation from "../../components/NavigationBar";
 import Footer from "../../components/Footer";
 import ProfileNavigation from "../../components/ProfileNavigation";
 import ProfileMain from "../../components/ProfileMain";
+import { useEffect } from 'react'
 const Profile = () => {
+    useEffect(() => {
+            document.title = "Profile | videobelajar"
+        })
     return(
         <>
             <Navigation/>

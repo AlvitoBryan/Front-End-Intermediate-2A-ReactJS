@@ -125,7 +125,6 @@ const AuthFormContentWrapper = ({ inputs, buttons, onSubmitForm, mode = "registe
 
 export default AuthFormContentWrapper;
 
-// Tambahkan style untuk animasi popup
 const style = document.createElement('style');
 style.innerHTML = `
 @keyframes popup-show {

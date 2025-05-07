@@ -6,7 +6,6 @@ const Profile = () => {
   const navigate = useNavigate();
   const dropdownRef = useRef(null);
 
-  // Tutup dropdown jika klik di luar
   useEffect(() => {
     function handleClickOutside(event) {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
